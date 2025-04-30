@@ -1,3 +1,5 @@
 export default function SignUpPage(){
-    <h1>SignUp</h1>
+    return(
+        <h1 className="text-5xl text-blue-800">SignUp</h1>
+    )
 }

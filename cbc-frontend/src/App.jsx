@@ -2,10 +2,11 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/login.jsx'
 import SignUpPage from './pages/signup.jsx'
+import Header from './components/header.jsx';
+import AdminPage from './pages/adminPage.jsx';
+import HomePage from './pages/home.jsx';
 
-// Temporary placeholders for missing components
-const HomePage = () => <h1 className="text-xl text-green-600">Home Page</h1>;
-const AdminPage = () => <h1 className="text-xl text-red-600">Admin Page</h1>;
+
 
 function App() {
   return (
@@ -13,11 +14,12 @@ function App() {
     <BrowserRouter>
       <div>
         {/* <Header/> */}
-        <Routes path="/*">
+        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />   
           <Route path="/admin/*" element={<AdminPage />} />
+          <Route path="*" element={<h1>404 not found</h1>} />
         </Routes>
       </div>
     </BrowserRouter>
