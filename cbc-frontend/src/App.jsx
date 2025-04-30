@@ -7,7 +7,16 @@ function App() {
 
   return (
     <>
-     <Header/>
+    <div className='w-full h-screen bg-amber-200 flex flex-col justify-center items-center'>
+      <div className='w-[600px] h-[600px] bg-amber-900 relative flex flex-col justify-center items-center'>
+      <div className='w-[100px] h-[100px] bg-red-600 absolute top-[10px] left-[10px]'></div>
+      <div className='w-[100px] h-[100px] bg-blue-600'></div>
+      <div className='w-[100px] h-[100px] bg-purple-600'></div>
+      <div className='w-[100px] h-[100px] bg-green-600'></div>
+      <div className='w-[100px] h-[100px] bg-orange-400'></div>
+      </div>
+    </div>
+     {/* <Header/>
      <ProductCard
              name="Apple Laptop"
              description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem reiciendis a quo laudantium! 
@@ -21,7 +30,7 @@ function App() {
              description="Lorem ipsum dolor sit amet consectetur"
              price="84000/="
              picture="https://cdn.mos.cms.futurecdn.net/3kcgKLkfPRbskpsYzW239d.jpg"
-           />
+           /> */}
     </>
   )
 }
