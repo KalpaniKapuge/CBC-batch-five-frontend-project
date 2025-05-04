@@ -1,4 +1,5 @@
 import { Link ,Route,Routes} from "react-router-dom";
+import AdminProductsPage from "../../admin/adminProductsPage";
 
 export default function AdminPage() {
     return (
@@ -9,9 +10,9 @@ export default function AdminPage() {
                 <Link to="/admin/orders" className="p-4 hover:bg-blue-700">Orders</Link>
                 <Link to="/admin/reviews" className="p-4 hover:bg-blue-700">Reviews</Link>
             </div>
-            <div className="h-full w-[calc(100%-300px)] bg-blue-200 p-4">
+            <div className="h-full w-[calc(100%-300px)] bg-white p-4">
                 <Routes path="/*">
-                    <Route path="/products" element={<h1>Products</h1>}/>
+                    <Route path="/products" element={<AdminProductsPage/>}/>
                     <Route path="/users" element={<h1>Users</h1>}/>
                     <Route path="/orders" element={<h1>Orders</h1>}/>
                     <Route path="/reviews" element={<h1>Reviews</h1>}/>
