@@ -11,13 +11,14 @@ export default function LoginPage(){
         console.log(email)
         console.log(password)
         try{
-            const response = await axios.post("http://localhost:5000/api/users/login" , {
+            const response = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/users/login" , {
                 email : email,
                 password : password
             })
             //alert("Login successfull")
             toast.success("Login Successful")
             console.log(response.data)
+            
             
         }catch(e){
             toast.error(e.response.data.message)
