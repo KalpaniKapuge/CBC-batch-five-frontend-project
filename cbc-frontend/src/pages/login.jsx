@@ -27,10 +27,13 @@ export default function LoginPage(){
             }else{
                 navigate("/")
             }
+
             
-        }catch(e){
-            toast.error(e.response.data.message)
+        }catch (e) {
+            const errorMessage = e?.response?.data?.message || "Login failed. Please try again.";
+            toast.error(errorMessage);
         }
+        
 
 
     }
