@@ -17,12 +17,12 @@ function App() {
         <Toaster position='top-right'/>
         {/* <Header/> */}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<RegisterPage />} />   
           <Route path="/admin/*" element={<AdminPage />} />
           <Route path="/testing" element={<TestingPage />} />
-          <Route path="*" element={<h1>404 not found</h1>} />
+          <Route path="*" element={<HomePage />} />
           
         </Routes>
       </div>
