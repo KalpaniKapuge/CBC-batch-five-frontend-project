@@ -33,14 +33,18 @@ export default function EditProductPage() {
             toast.error("Please select at least one image");
             return;
         }
-
+        
+        let imageUrls = location.state.images;
         const promisesArray = [];
 
         for (let i = 0; i < images.length; i++) {
             promisesArray[i] = mediaUpload(images[i]);
         }
+
         try {
-            const imageUrls = await Promise.all(promisesArray);
+            if(images.length>0){
+                imageUrls = await Promise.all(promisesArray)
+            }
             console.log(imageUrls);
 
             const altNamesArray = altNames.split(",")
@@ -55,7 +59,7 @@ export default function EditProductPage() {
                 price : price,
                 stock : stock,
             }
-            axios.post(import.meta.env.VITE_BACKEND_URL + "/api/products", product , {
+            axios.put(import.meta.env.VITE_BACKEND_URL + "/api/products/"+productId, product , {
                 headers : {
                     "Authorization" : "Bearer "+token
                 }
@@ -75,6 +79,7 @@ export default function EditProductPage() {
         <div className="w-full h-full flex flex-col justify-center items-center">
             <input
                 type="text"
+                disabled
                 placeholder="Product ID"
                 className="input input-bordered w-full max-w-xs"
                 value={productId}
