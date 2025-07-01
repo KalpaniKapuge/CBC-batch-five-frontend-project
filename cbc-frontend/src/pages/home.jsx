@@ -1,3 +1,6 @@
+import Header from "../components/header"
+import { Routes , Route } from "react-router-dom"
+
 export default function HomePage(){
     return(
         <div className="w-full h-screen flex flex-col items-center">
